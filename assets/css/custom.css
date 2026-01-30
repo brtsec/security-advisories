@@ -125,3 +125,23 @@ a, .breadcrumb-nav-list-item a {
 h1, h2, h3, h4 {
   color: #ffffff !important;
 }
+
+/* ===== Layout tweak: slightly tighter sidebar, wider content ===== */
+@media (min-width: 50rem) {
+  .side-bar {
+    padding-left: 4px !important;
+    padding-right: 6px !important;
+  }
+  .main-content {
+    max-width: 1600px !important;
+  }
+}
+
+/* ===== Note callout: use HTB accent (not red) ===== */
+.callout.warning {
+  border-color: rgba(159, 239, 0, 0.40) !important;
+  background: rgba(159, 239, 0, 0.10) !important;
+}
+.callout.warning .callout-title {
+  color: #9fef00 !important;
+}
