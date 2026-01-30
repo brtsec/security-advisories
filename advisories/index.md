@@ -3,8 +3,6 @@ layout: default
 title: Advisories (CVE)
 nav_order: 2
 has_toc: false
-
-permalink: /advisories/
 ---
 
 # Advisories
