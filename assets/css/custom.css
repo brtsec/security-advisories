@@ -91,3 +91,37 @@ a:hover {
 .site-footer {
   display: none;
 }
+
+/* ===== Force HTB palette (guaranteed) ===== */
+html, body {
+  background: #101927 !important;
+  color: #e6edf7 !important;
+}
+
+.side-bar {
+  background: #0d1522 !important;
+}
+
+.main, .main-content-wrap {
+  background: transparent !important;
+}
+
+.site-title, .site-header, .site-nav, .nav-list {
+  color: #e6edf7 !important;
+}
+
+/* Accent */
+a, .breadcrumb-nav-list-item a {
+  color: #9fef00 !important;
+}
+
+.btn.btn-primary {
+  background: #9fef00 !important;
+  border-color: #9fef00 !important;
+  color: #101927 !important;
+}
+
+/* Keep headings readable */
+h1, h2, h3, h4 {
+  color: #ffffff !important;
+}
