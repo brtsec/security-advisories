@@ -1,0 +1,9 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Advisories (CVE)"
+    url: /advisories/
+  - title: "Research"
+    url: /research/
+  - title: "PoCs"
+    url: /pocs/

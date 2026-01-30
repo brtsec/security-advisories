@@ -1,15 +1,18 @@
-title: Security Advisories & Research
-description: A consolidated collection of CVE security advisories, featuring technical details, security research notes, and proof-of-concept material.
-
-remote_theme: just-the-docs/just-the-docs
+title: Security Advisories
+description: "CVE advisories and security research notes."
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "neon"
 
 plugins:
-  - jekyll-remote-theme
+  - jekyll-include-cache
 
-color_scheme: vibrant
-search_enabled: false
-heading_anchors: true
-back_to_top: true
-back_to_top_text: "Back to top"
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      classes: wide
+      author_profile: false
+      read_time: false
 
-footer_content: "Content is provided for educational purposes only. Use responsibly and only on systems you own or have explicit permission to test."
+masthead_title: "Security Advisories"
