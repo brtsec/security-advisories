@@ -160,3 +160,43 @@ a:hover { filter: brightness(1.15); }
 .main-content p, .main-content li {
   color: rgba(238, 242, 247, 0.92);
 }
+
+
+/* ===== Overrides: modern layout + nav + tables (dark) ===== */
+@media (min-width: 50rem) {
+  .side-bar {
+    width: 220px;
+    min-width: 220px;
+    left: 44px;
+  }
+  .main {
+    margin-left: 264px;
+  }
+  .main-content {
+    max-width: 1250px;
+  }
+}
+
+/* Better active nav (remove ugly white highlight) */
+.nav-list .nav-list-item .nav-list-link.active,
+.nav-list .nav-list-item.active > .nav-list-link {
+  background: rgba(56, 189, 248, 0.18) !important;
+  color: #eaf2ff !important;
+  border-radius: 10px;
+  box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.95);
+}
+
+.nav-list .nav-list-item .nav-list-link:hover {
+  background: rgba(56, 189, 248, 0.10);
+}
+
+/* Tables: ensure they match theme (avoid full white table blocks) */
+.main-content table {
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+.main-content table th,
+.main-content table td {
+  background: transparent;
+  border-color: rgba(255,255,255,0.08);
+}
