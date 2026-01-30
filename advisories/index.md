@@ -2,6 +2,7 @@
 layout: default
 title: Advisories (CVE)
 nav_order: 2
+has_toc: false
 ---
 
 # Advisories
@@ -18,10 +19,25 @@ This section contains **security advisories associated with CVEs**
 _No advisories published yet._
 {% else %}
 
-| CVE | Title | Product | CVSS |
-| --- | --- | --- | --- |
-{% for p in adv_pages %}
-| {{ p.cve | default: '—' }} | [{{ p.short_title | default: p.title }}]({{ p.url | relative_url }}) | {{ p.product | default: '—' }} | v3.1 {{ p.cvss31_score | default: '—' }} / v4.0 {{ p.cvss40_severity | default: '—' }} |
-{% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th>CVE</th>
+      <th>Title</th>
+      <th>Product</th>
+      <th>CVSS</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for p in adv_pages %}
+    <tr>
+      <td>{{ p.cve | default: '—' }}</td>
+      <td><a href="{{ p.url | relative_url }}">{{ p.short_title | default: p.title }}</a></td>
+      <td>{{ p.product | default: '—' }}</td>
+      <td>v3.1 {{ p.cvss31_score | default: '—' }} / v4.0 {{ p.cvss40_severity | default: '—' }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
 
 {% endif %}
