@@ -70,7 +70,7 @@ h1, h2, h3 {
   .main-content { max-width: 1100px; padding-left: 2rem; padding-right: 2rem; }
 }
 /* Sidebar brand/title sizing */
-.site-title { font-size: 1.1rem; line-height: 1.2; }
+.site-title { font-size: 1.0rem; line-height: 1.2; }
 /* Modern polish */
 .main-content { font-size: 16.5px; line-height: 1.65; }
 .main-content h1 { letter-spacing: -0.02em; line-height: 1.15; }
@@ -85,8 +85,84 @@ table thead th { backdrop-filter: blur(6px); }
 /* Optional: hide default theme attribution footer in sidebar */
 .site-footer { display: none; }
 
+/* ===== Readability + modern layout tweaks (vivid dark) ===== */
+@media (min-width: 50rem) {
+  /* keep sidebar width, but move it slightly away from the viewport edge */
+  .side-bar { left: 28px; }
+  /* match the sidebar offset so content isn't pushed too far right */
+  .main { margin-left: 248px; } /* 220px + 28px */
 
-/* ===== Overrides: modern layout + nav + tables (light) ===== */
+  /* wider reading column */
+  .main-content { max-width: 1250px; padding-left: 2.25rem; padding-right: 2.25rem; }
+}
+
+/* Give the content area a subtle panel so text pops from the background */
+.main-content-wrap {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  margin: 1.25rem 1.25rem 2rem 0.75rem;
+}
+
+/* Slightly larger base type for readability */
+.main-content { font-size: 17px; line-height: 1.7; }
+
+/* Make headings stand out more */
+.main-content h1 { font-weight: 700; }
+.main-content h2 { font-weight: 650; }
+
+/* Links: a bit brighter on hover */
+a:hover { filter: brightness(1.15); }
+
+/* ===== Accent section cards ===== */
+.section-card {
+  position: relative;
+  margin: 1.15rem 0;
+  padding: 1.15rem 1.25rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.section-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(56,189,248,0.95), rgba(167,139,250,0.90));
+}
+
+.section-card > :first-child {
+  margin-top: 0;
+}
+
+.section-card h2 {
+  margin-top: 0;
+  padding-left: 0.25rem;
+}
+
+.section-card h2,
+.section-card h3 {
+  color: #f8fafc;
+}
+
+/* Make headings globally readable on vivid dark */
+.main-content h1, .main-content h2, .main-content h3 {
+  color: #f8fafc;
+}
+
+/* Slightly soften paragraph text for comfort */
+.main-content p, .main-content li {
+  color: rgba(238, 242, 247, 0.92);
+}
+
+
+/* ===== Overrides: modern layout + nav + tables (dark) ===== */
 @media (min-width: 50rem) {
   .side-bar {
     width: 220px;
@@ -101,28 +177,112 @@ table thead th { backdrop-filter: blur(6px); }
   }
 }
 
-/* Better active nav (remove harsh highlight) */
+/* Better active nav (remove ugly white highlight) */
 .nav-list .nav-list-item .nav-list-link.active,
 .nav-list .nav-list-item.active > .nav-list-link {
-  background: rgba(124, 77, 255, 0.12) !important;
-  color: #111827 !important;
+  background: rgba(56, 189, 248, 0.18) !important;
+  color: #eaf2ff !important;
   border-radius: 10px;
-  box-shadow: inset 3px 0 0 rgba(124, 77, 255, 0.65);
+  box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.95);
 }
 
 .nav-list .nav-list-item .nav-list-link:hover {
   background: rgba(56, 189, 248, 0.10);
 }
 
-/* Tables: subtle cards on light background */
+/* Tables: ensure they match theme (avoid full white table blocks) */
 .main-content table {
-  border: 1px solid rgba(15,23,42,0.10);
-  background: rgba(255,255,255,0.85);
-}
-.main-content table th {
-  background: rgba(15,23,42,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
 }
 .main-content table th,
 .main-content table td {
-  border-color: rgba(15,23,42,0.10);
+  background: transparent;
+  border-color: rgba(255,255,255,0.08);
+}
+
+
+/* ===== HTB-inspired layout + polish ===== */
+
+/* Sidebar: keep it flush (no weird left gap), compact and clean */
+@media (min-width: 50rem) {
+  .side-bar {
+    width: 240px;
+    min-width: 240px;
+    left: 0 !important;            /* remove any previous offset */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .main {
+    margin-left: 240px !important;
+  }
+  .main-content {
+    max-width: 1400px !important;  /* make main text longer */
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+
+/* Page title + headings: ensure readable on dark background */
+h1, .main-content h1 {
+  color: #ffffff !important;
+  letter-spacing: -0.02em;
+}
+h2, h3 {
+  color: #eaf2ff !important;
+}
+
+/* Links: HTB accent */
+a {
+  color: #9fef00 !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+a:hover {
+  filter: brightness(1.06);
+}
+
+/* Active nav: green accent, no ugly white pill */
+.nav-list .nav-list-item .nav-list-link.active,
+.nav-list .nav-list-item.active > .nav-list-link {
+  background: rgba(159, 239, 0, 0.12) !important;
+  color: #e6edf7 !important;
+  border-radius: 10px;
+  box-shadow: inset 3px 0 0 rgba(159, 239, 0, 0.95);
+}
+
+.nav-list .nav-list-item .nav-list-link:hover {
+  background: rgba(159, 239, 0, 0.08);
+}
+
+/* Section cards: HTB accent bar */
+.section-card {
+  border: 1px solid rgba(230, 237, 247, 0.10) !important;
+  background: rgba(230, 237, 247, 0.04) !important;
+}
+.section-card::before {
+  background: linear-gradient(180deg, rgba(159,239,0,0.95), rgba(159,239,0,0.30)) !important;
+}
+
+/* Tables: dark, not white */
+.main-content table {
+  border: 1px solid rgba(230, 237, 247, 0.12) !important;
+  background: rgba(230, 237, 247, 0.03) !important;
+}
+.main-content table th {
+  background: rgba(230, 237, 247, 0.05) !important;
+  color: #eaf2ff !important;
+}
+.main-content table td {
+  background: transparent !important;
+  color: #e6edf7 !important;
+}
+.main-content table th,
+.main-content table td {
+  border-color: rgba(230, 237, 247, 0.10) !important;
+}
+
+/* Remove the “Just the Docs” footer blurb if present */
+.site-footer {
+  display: none !important;
 }
