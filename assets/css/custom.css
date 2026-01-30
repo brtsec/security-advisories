@@ -286,3 +286,37 @@ a:hover {
 .site-footer {
   display: none !important;
 }
+
+
+/* ===== HTB fixes v2: layout + warning note ===== */
+@media (min-width: 50rem) {
+  /* Make the whole content area feel less "boxed" and use more horizontal space */
+  .main-content-wrap {
+    max-width: none !important;
+    width: auto !important;
+    margin: 1.25rem 2rem 2.25rem 2rem !important;
+    padding: 2rem 2.25rem !important;
+  }
+
+  /* Wider reading area */
+  .main-content {
+    max-width: 1500px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Turn the "Note:" blockquote into a red warning card inside section cards */
+.section-card blockquote {
+  border-left: 4px solid rgba(255, 82, 82, 0.95) !important;
+  background: rgba(255, 82, 82, 0.10) !important;
+  color: #ffecec !important;
+}
+
+.section-card blockquote code {
+  background: rgba(255, 82, 82, 0.14) !important;
+}
+
+.section-card blockquote strong {
+  color: #ffffff !important;
+}
