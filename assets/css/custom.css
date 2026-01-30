@@ -70,7 +70,7 @@ h1, h2, h3 {
   .main-content { max-width: 1100px; padding-left: 2rem; padding-right: 2rem; }
 }
 /* Sidebar brand/title sizing */
-.site-title { font-size: 1.1rem; line-height: 1.2; }
+.site-title { font-size: 1.0rem; line-height: 1.2; }
 /* Modern polish */
 .main-content { font-size: 16.5px; line-height: 1.65; }
 .main-content h1 { letter-spacing: -0.02em; line-height: 1.15; }
@@ -84,3 +84,33 @@ table thead th { backdrop-filter: blur(6px); }
 .badge { border-radius: 999px; }
 /* Optional: hide default theme attribution footer in sidebar */
 .site-footer { display: none; }
+
+/* ===== Readability + modern layout tweaks (vivid dark) ===== */
+@media (min-width: 50rem) {
+  /* keep sidebar width, but move it slightly away from the viewport edge */
+  .side-bar { left: 14px; }
+  /* match the sidebar offset so content isn't pushed too far right */
+  .main { margin-left: 234px; } /* 220px + 14px */
+
+  /* wider reading column */
+  .main-content { max-width: 1250px; padding-left: 2.25rem; padding-right: 2.25rem; }
+}
+
+/* Give the content area a subtle panel so text pops from the background */
+.main-content-wrap {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  margin: 1.25rem 1.25rem 2rem 0.75rem;
+}
+
+/* Slightly larger base type for readability */
+.main-content { font-size: 17px; line-height: 1.7; }
+
+/* Make headings stand out more */
+.main-content h1 { font-weight: 700; }
+.main-content h2 { font-weight: 650; }
+
+/* Links: a bit brighter on hover */
+a:hover { filter: brightness(1.15); }

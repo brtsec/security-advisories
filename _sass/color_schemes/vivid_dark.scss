@@ -1,17 +1,22 @@
+// Vivid dark scheme for Just the Docs (readability + vibrant accents)
 
-// Vivid dark scheme for Just the Docs (more contrast + vibrant accents)
+// Backgrounds
 $body-background-color: #0b1220;
 $sidebar-color: #0f172a;
 $search-background-color: #0f172a;
 
-$body-text-color: #e5e7eb;
-$heading-color: #ffffff;
+// Text
+$body-text-color: #eef2f7;
+$body-heading-color: #f8fafc;
 
+// Accents
 $link-color: #38bdf8; // cyan
 $btn-primary-color: #a78bfa; // violet
 
+// Borders / code / panels
 $border-color: rgba(255, 255, 255, 0.10);
-$code-background-color: rgba(255, 255, 255, 0.06);
+$code-background-color: rgba(255, 255, 255, 0.08);
 $feedback-color: rgba(255, 255, 255, 0.06);
 
-$nav-child-link-color: rgba(229, 231, 235, 0.90);
+// Nav
+$nav-child-link-color: rgba(238, 242, 247, 0.92);
