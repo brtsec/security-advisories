@@ -88,9 +88,9 @@ table thead th { backdrop-filter: blur(6px); }
 /* ===== Readability + modern layout tweaks (vivid dark) ===== */
 @media (min-width: 50rem) {
   /* keep sidebar width, but move it slightly away from the viewport edge */
-  .side-bar { left: 14px; }
+  .side-bar { left: 28px; }
   /* match the sidebar offset so content isn't pushed too far right */
-  .main { margin-left: 234px; } /* 220px + 14px */
+  .main { margin-left: 248px; } /* 220px + 28px */
 
   /* wider reading column */
   .main-content { max-width: 1250px; padding-left: 2.25rem; padding-right: 2.25rem; }
@@ -114,3 +114,49 @@ table thead th { backdrop-filter: blur(6px); }
 
 /* Links: a bit brighter on hover */
 a:hover { filter: brightness(1.15); }
+
+/* ===== Accent section cards ===== */
+.section-card {
+  position: relative;
+  margin: 1.15rem 0;
+  padding: 1.15rem 1.25rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.section-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(56,189,248,0.95), rgba(167,139,250,0.90));
+}
+
+.section-card > :first-child {
+  margin-top: 0;
+}
+
+.section-card h2 {
+  margin-top: 0;
+  padding-left: 0.25rem;
+}
+
+.section-card h2,
+.section-card h3 {
+  color: #f8fafc;
+}
+
+/* Make headings globally readable on vivid dark */
+.main-content h1, .main-content h2, .main-content h3 {
+  color: #f8fafc;
+}
+
+/* Slightly soften paragraph text for comfort */
+.main-content p, .main-content li {
+  color: rgba(238, 242, 247, 0.92);
+}
