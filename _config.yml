@@ -6,7 +6,7 @@ remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
 
-color_scheme: vivid_dark
+color_scheme: vivid_light
 search_enabled: false
 heading_anchors: true
 back_to_top: true

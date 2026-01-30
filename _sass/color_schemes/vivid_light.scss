@@ -1,17 +1,14 @@
-
-// Vivid light scheme for Just the Docs (more modern, less flat)
-$body-background-color: #f8fafc;
-$sidebar-color: #ffffff;
-$search-background-color: #ffffff;
+// Vivid Light scheme for Just the Docs
+$body-background-color: #f6f7fb;
+$sidebar-color: #eef2ff;
+$search-background-color: #eef2ff;
 
 $body-text-color: #0f172a;
-$heading-color: #0b1220;
+$body-heading-color: #0b1220;
 
-$link-color: #2563eb; // vivid blue
-$btn-primary-color: #7c3aed; // violet
+$link-color: #2563eb;         // vivid blue
+$btn-primary-color: #7c3aed;  // violet
 
-$border-color: rgba(2, 6, 23, 0.12);
-$code-background-color: rgba(2, 6, 23, 0.06);
-$feedback-color: rgba(2, 6, 23, 0.04);
-
-$nav-child-link-color: rgba(15, 23, 42, 0.85);
+$border-color: rgba(15,23,42,0.12);
+$code-background-color: rgba(15,23,42,0.05);
+$feedback-color: rgba(15,23,42,0.04);
