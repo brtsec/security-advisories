@@ -1,7 +1,7 @@
 // Global overrides for Just the Docs (compiled into site CSS)
 // HTB palette: background #101927, accent #9fef00
 
-$nav-width: 240px;
+$nav-width: 260px;
 
 .side-bar {
   @include mq(lg) {
@@ -20,7 +20,9 @@ $nav-width: 240px;
 /* wider reading column */
 .main-content {
   @include mq(lg) {
-    max-width: 1850px;
+    max-width: 2000px;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 }
 
