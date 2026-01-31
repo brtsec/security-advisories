@@ -1,0 +1,111 @@
+// Global overrides for Just the Docs (compiled into site CSS)
+// HTB palette: background #101927, accent #9fef00
+
+$nav-width: 240px;
+
+.side-bar {
+  @include mq(lg) {
+    width: $nav-width;
+    min-width: $nav-width;
+  }
+}
+
+/* keep main aligned with sidebar width */
+.main {
+  @include mq(lg) {
+    margin-left: $nav-width;
+  }
+}
+
+/* wider reading column */
+.main-content {
+  @include mq(lg) {
+    max-width: 1850px;
+  }
+}
+
+/* Fix white hover highlights across ALL pages */
+.site-title,
+.site-title:visited {
+  background: transparent !important;
+}
+.site-title:hover,
+.site-title:focus {
+  background: rgba(159, 239, 0, 0.08) !important;
+  color: $body-text-color !important;
+  box-shadow: none !important;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover {
+  background: rgba(159, 239, 0, 0.08) !important;
+}
+
+/* Active nav */
+.nav-list .nav-list-item .nav-list-link.active,
+.nav-list .nav-list-item.active > .nav-list-link {
+  background: rgba(159, 239, 0, 0.12) !important;
+  color: $body-text-color !important;
+  border-radius: 10px;
+  box-shadow: inset 3px 0 0 rgba(159, 239, 0, 0.95);
+}
+
+/* Tables: dark theme (avoid white tables) */
+.main-content table {
+  background: rgba(230, 237, 247, 0.03) !important;
+  border: 1px solid rgba(230, 237, 247, 0.12) !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.main-content table th {
+  background: rgba(230, 237, 247, 0.05) !important;
+  color: #eaf2ff !important;
+}
+
+.main-content table td {
+  background: transparent !important;
+  color: $body-text-color !important;
+}
+
+.main-content table th,
+.main-content table td {
+  border-color: rgba(230, 237, 247, 0.10) !important;
+}
+
+/* Badge style (label/value split) */
+.badges { display:flex; flex-wrap:wrap; gap:0.55rem; margin: 0.85rem 0 1.25rem 0; }
+
+.badge {
+  display:inline-flex !important;
+  align-items:center;
+  border:1px solid rgba(159,239,0,0.35) !important;
+  background: rgba(16, 25, 39, 0.55) !important;
+  border-radius: 999px !important;
+  overflow:hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+}
+
+.badge .badge-k {
+  padding: 0.34rem 0.55rem;
+  background: rgba(159,239,0,0.10);
+  color: #9fef00;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border-right: 1px solid rgba(159,239,0,0.22);
+}
+
+.badge .badge-v {
+  padding: 0.34rem 0.65rem;
+  color: $body-text-color;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Note callout accent */
+.callout.warning {
+  border-color: rgba(159,239,0,0.40) !important;
+  background: rgba(159,239,0,0.10) !important;
+}
+.callout.warning .callout-title {
+  color: #9fef00 !important;
+}
