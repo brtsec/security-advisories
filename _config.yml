@@ -1,0 +1,15 @@
+title: Security Advisories
+description: "CVE advisories and security research notes."
+
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
+
+color_scheme: htb-dark
+search_enabled: false
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "Content is provided for educational purposes only. Use responsibly and only on systems you own or have explicit permission to test."
