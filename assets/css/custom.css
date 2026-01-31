@@ -1,201 +1,93 @@
-/* ===== HTB-inspired accents (no layout hacks, minimal styling) ===== */
+/* Just the Docs Custom */
 
-/* Keep the default Just-the-Docs layout; only polish typography & accents */
-.main-content {
-  line-height: 1.65;
+/* Tables */
+table th, table td {
+  vertical-align: top;
 }
-
-/* Headings: clearer + subtle accent underline */
-h1, .main-content h1 {
-  color: #ffffff;
-  letter-spacing: -0.02em;
-}
-h2, h3 {
-  color: #eaf2ff;
-}
-h2 {
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid rgba(159, 239, 0, 0.28);
+table th {
+  white-space: nowrap;
 }
 
-/* Links: HTB green */
-a {
-  color: #9fef00;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
-a:hover {
-  filter: brightness(1.08);
-}
-
-/* Active nav: green accent, no white highlight */
-.nav-list .nav-list-item .nav-list-link.active,
-.nav-list .nav-list-item.active > .nav-list-link {
-  background: rgba(159, 239, 0, 0.12) !important;
-  color: #e6edf7 !important;
-  border-radius: 10px;
-  box-shadow: inset 3px 0 0 rgba(159, 239, 0, 0.95);
-}
-.nav-list .nav-list-item .nav-list-link:hover {
-  background: rgba(159, 239, 0, 0.08);
-}
-
-/* Tables: dark styling */
-.main-content table {
-  border: 1px solid rgba(230, 237, 247, 0.12);
-  background: rgba(230, 237, 247, 0.03);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.main-content table th {
-  background: rgba(230, 237, 247, 0.05);
-  color: #eaf2ff;
-}
-.main-content table td {
-  background: transparent;
-  color: #e6edf7;
-}
-.main-content table th,
-.main-content table td {
-  border-color: rgba(230, 237, 247, 0.10);
-}
-
-/* Badges: subtle HTB glow */
-.badge {
-  border: 1px solid rgba(159, 239, 0, 0.25);
-  background: rgba(159, 239, 0, 0.06);
-}
-.badge strong {
-  color: #9fef00;
-}
-
-/* Warning callout (use <div class="callout warning">...</div>) */
+/* Callout Box */
 .callout {
-  border: 1px solid rgba(230, 237, 247, 0.12);
-  background: rgba(230, 237, 247, 0.04);
-  border-radius: 12px;
-  padding: 1rem 1.1rem;
+  padding: 0.95rem 1.05rem;
   margin: 1rem 0;
+  border-left: 4px solid rgba(127, 127, 127, 0.8);
+  background: rgba(127, 127, 127, 0.10);
+  border-radius: 0.35rem;
 }
-.callout.warning {
-  border-color: rgba(255, 82, 82, 0.35);
-  background: rgba(255, 82, 82, 0.10);
-}
-.callout.warning .callout-title {
-  color: #ffffff;
+.callout-title {
   font-weight: 700;
   margin-bottom: 0.35rem;
 }
 
-/* Hide theme attribution footer blurb */
-.site-footer {
-  display: none;
+/* Badges for CVE / CVSS metadata */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.8rem 0 1rem;
 }
-
-/* ===== Force HTB palette (guaranteed) ===== */
-html, body {
-  background: #101927 !important;
-  color: #e6edf7 !important;
-}
-
-.side-bar {
-  background: #0d1522 !important;
-}
-
-.main, .main-content-wrap {
-  background: transparent !important;
-}
-
-.site-title, .site-header, .site-nav, .nav-list {
-  color: #e6edf7 !important;
-}
-
-/* Accent */
-a, .breadcrumb-nav-list-item a {
-  color: #9fef00 !important;
-}
-
-.btn.btn-primary {
-  background: #9fef00 !important;
-  border-color: #9fef00 !important;
-  color: #101927 !important;
-}
-
-/* Keep headings readable */
-h1, h2, h3, h4 {
-  color: #ffffff !important;
-}
-
-/* ===== Layout tweak: slightly tighter sidebar, wider content ===== */
-@media (min-width: 50rem) {
-  .side-bar {
-    padding-left: 4px !important;
-    padding-right: 6px !important;
-  }
-  .main-content {
-    max-width: 1600px !important;
-  }
-}
-
-/* ===== Note callout: use HTB accent (not red) ===== */
-.callout.warning {
-  border-color: rgba(159, 239, 0, 0.40) !important;
-  background: rgba(159, 239, 0, 0.10) !important;
-}
-.callout.warning .callout-title {
-  color: #9fef00 !important;
-}
-
-/* ===== v5: sidebar tighter, wider content, badge redesign, CWE rendering ===== */
-@media (min-width: 50rem) {
-  .side-bar {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-  }
-  .site-title {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
-  }
-  .nav-list .nav-list-item .nav-list-link {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-  }
-  .main-content {
-    max-width: 1850px !important;
-  }
-}
-
-/* New badge design: label/value split */
-.badges { display:flex; flex-wrap:wrap; gap:0.55rem; margin: 0.85rem 0 1.25rem 0; }
-
 .badge {
-  display:inline-flex !important;
-  align-items:center;
-  border:1px solid rgba(159,239,0,0.35) !important;
-  background: rgba(16, 25, 39, 0.55) !important;
-  border-radius: 999px !important;
-  overflow:hidden;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(127, 127, 127, 0.35);
+  background: rgba(127, 127, 127, 0.10);
+}
+.badge strong {
+  font-weight: 650;
+  margin-right: 0.25rem;
 }
 
-.badge .badge-k {
-  padding: 0.34rem 0.55rem;
-  background: rgba(159,239,0,0.10);
-  color: #9fef00;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  border-right: 1px solid rgba(159,239,0,0.22);
+/* Inline Code */
+code {
+  padding: 0.08rem 0.25rem;
+  border-radius: 0.25rem;
 }
 
-.badge .badge-v {
-  padding: 0.34rem 0.65rem;
-  color: #e6edf7;
-  font-weight: 600;
-  white-space: nowrap;
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid rgba(127, 127, 127, 0.7);
+  background: rgba(127, 127, 127, 0.06);
+  padding: 0.75rem 1rem;
+  border-radius: 0.35rem;
 }
 
-.badge:hover {
-  border-color: rgba(159,239,0,0.55) !important;
-  background: rgba(16, 25, 39, 0.70) !important;
+/* Heading Spaces */
+h1, h2, h3 {
+  letter-spacing: -0.01em;
 }
+
+
+/* Minimal Mistakes tweaks */
+.page__title{letter-spacing:-0.02em;}
+
+/* Center the content (avoid edge-to-edge) */
+.page__inner-wrap,
+.archive,
+.initial-content,
+.page__content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 80em) {
+  .page__inner-wrap,
+  .archive,
+  .initial-content,
+  .page__content {
+    max-width: 1180px;
+  }
+}
+
+/* Slightly wider layout for code blocks without hugging edges */
+.highlighter-rouge, pre, code {
+  border-radius: 10px;
+}
+
+/* Accent buttons/links */
+a { text-decoration-thickness: 2px; text-underline-offset: 3px; }
