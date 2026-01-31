@@ -1,12 +1,14 @@
 // Global overrides for Just the Docs (compiled into site CSS)
 // HTB palette: background #101927, accent #9fef00
 
-$nav-width: 350px;
+$nav-width: 260px;
 
 .side-bar {
   @include mq(lg) {
     width: $nav-width;
     min-width: $nav-width;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
@@ -15,15 +17,27 @@ $nav-width: 350px;
   @include mq(lg) {
     margin-left: $nav-width;
   }
+
+/* Center the content in the main pane (match Just-the-Docs default feel) */
+.main-content-wrap {
+  @include mq(lg) {
+    max-width: 1500px;     /* wider, but still centered */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem;  /* creates the same gutter feel as the stock theme */
+    padding-right: 2.5rem;
+    padding-top: 1.75rem;
+    padding-bottom: 2.25rem;
+  }
 }
 
-/* wider reading column */
+/* Let the inner content use the wrap width */
 .main-content {
   @include mq(lg) {
-    max-width: 2000px;
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
+    max-width: none;
   }
+}
+
 }
 
 /* Fix white hover highlights across ALL pages */
