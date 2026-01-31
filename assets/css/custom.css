@@ -146,57 +146,56 @@ h1, h2, h3, h4 {
   color: #9fef00 !important;
 }
 
-/* ===== v4 tweaks: tighter sidebar, wider content, nicer badges ===== */
+/* ===== v5: sidebar tighter, wider content, badge redesign, CWE rendering ===== */
 @media (min-width: 50rem) {
   .side-bar {
     padding-left: 0 !important;
-    padding-right: 6px !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
   }
-  /* Reduce the nav indentation so items align closer to the left */
-  .nav-list .nav-list-item .nav-list-link {
+  .site-title {
     padding-left: 0.85rem !important;
     padding-right: 0.85rem !important;
   }
-  .nav-list .nav-list-item .nav-list-expander {
-    right: 0.25rem !important;
+  .nav-list .nav-list-item .nav-list-link {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
   }
-
-  /* Wider reading column */
   .main-content {
-    max-width: 1700px !important;
+    max-width: 1850px !important;
   }
 }
 
-/* Badges: cleaner HTB pill style */
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin: 0.75rem 0 1.25rem 0;
-}
+/* New badge design: label/value split */
+.badges { display:flex; flex-wrap:wrap; gap:0.55rem; margin: 0.85rem 0 1.25rem 0; }
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(159, 239, 0, 0.35);
-  background: rgba(15, 25, 39, 0.55);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display:inline-flex !important;
+  align-items:center;
+  border:1px solid rgba(159,239,0,0.35) !important;
+  background: rgba(16, 25, 39, 0.55) !important;
+  border-radius: 999px !important;
+  overflow:hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
 }
 
-.badge strong {
+.badge .badge-k {
+  padding: 0.34rem 0.55rem;
+  background: rgba(159,239,0,0.10);
   color: #9fef00;
   font-weight: 800;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  border-right: 1px solid rgba(159,239,0,0.22);
 }
 
-.badge {
+.badge .badge-v {
+  padding: 0.34rem 0.65rem;
   color: #e6edf7;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .badge:hover {
-  border-color: rgba(159, 239, 0, 0.55);
-  background: rgba(15, 25, 39, 0.70);
+  border-color: rgba(159,239,0,0.55) !important;
+  background: rgba(16, 25, 39, 0.70) !important;
 }
